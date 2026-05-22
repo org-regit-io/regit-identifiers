@@ -1,0 +1,13 @@
+regit-identifiers
+Copyright 2026 Regit.io — Nicolas Koenig
+
+Licensed under the Apache License, Version 2.0.
+
+This product is part of Regit OS, the operating system for investment products.
+https://www.regit.io
+
+The embedded Market Identifier Code table (`src/mic_registry.rs`, enabled by
+the default `mic-registry` feature) is a dated snapshot derived from the ISO
+10383 registry published by SWIFT as the ISO 10383 Registration Authority.
+ISO 10383 data is factual reference data; the snapshot date is recorded in
+that file and in SPEC.md.

@@ -1,0 +1,38 @@
+[package]
+name         = "regit-identifiers"
+version      = "1.0.0"
+edition      = "2024"
+rust-version = "1.85"
+license      = "Apache-2.0"
+description  = "Securities identifier validation in pure Rust — ISIN, CUSIP, SEDOL, LEI, BIC, MIC, FIGI, CFI and national numbers. Check-digit algorithms, parsing, and conversion. Zero dependencies, no_std, no alloc."
+repository   = "https://github.com/org-regit-io/regit-identifiers"
+homepage     = "https://www.regit.io"
+authors      = ["Nicolas Koenig <nicolas.koenig@regit.io>"]
+keywords     = ["isin", "cusip", "lei", "securities", "no-std"]
+categories   = ["finance", "no-std::no-alloc", "parser-implementations"]
+readme       = "README.md"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+
+[features]
+# `mic-registry` embeds a dated snapshot of the ISO 10383 Market Identifier
+# Code registry (2,853 entries) as a static, sorted table. It is pure data —
+# no_std-clean, no allocation — and is enabled by default. Disable it for a
+# minimal build that validates MIC *structure* only:
+#   cargo build --no-default-features
+default      = ["mic-registry"]
+mic-registry = []
+
+[dependencies]
+# Runtime dependencies: none. The crate is `no_std`, allocation-free, and
+# zero-dependency by design — see README.md and SPEC.md. Every check-digit
+# algorithm is hand-rolled from its governing standard.
+
+[dev-dependencies]
+proptest  = "1"
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name    = "identifiers"
+harness = false
