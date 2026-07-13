@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-07-13
+
+### Changed
+
+- Bumped the `criterion` dev/bench dependency from 0.5 to 0.8. This is a
+  dev/bench-only change: no runtime code, public API, or `no_std` behaviour
+  is affected.
+
 ## [1.0.0] - 2026-05-23
 
 First public release. The crate is `#![no_std]`, allocation-free, and has
@@ -125,4 +133,5 @@ is hand-rolled from its governing standard and traced in [SPEC.md](SPEC.md).
 - Zero runtime dependencies; licence and supply-chain policy enforced via
   `cargo-deny` (`deny.toml`).
 
+[1.0.1]: https://github.com/org-regit-io/regit-identifiers/releases/tag/v1.0.1
 [1.0.0]: https://github.com/org-regit-io/regit-identifiers/releases/tag/v1.0.0

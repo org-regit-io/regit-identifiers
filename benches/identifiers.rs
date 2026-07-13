@@ -17,7 +17,9 @@
 //! | `SecurityId::detect`               | < 500 ns |
 //! | MIC registry `lookup` (2.8k rows)  | < 120 ns |
 
-use criterion::{Criterion, black_box, criterion_group, criterion_main};
+use criterion::{Criterion, criterion_group, criterion_main};
+use std::hint::black_box;
+
 use regit_identifiers::checkdigit;
 use regit_identifiers::detect::SecurityId;
 use regit_identifiers::{Bic, Cfi, Cusip, Figi, Isin, Lei, Mic, Sedol, Valor, Wkn};
